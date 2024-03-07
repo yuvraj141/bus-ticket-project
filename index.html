@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-ticketing Project</title>
-</head>
-<body>
     
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- style -->
+<style>
+    body{
+        font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+    }
+</style>
+</head>
+
+<body class="my-10 font-raleway">
+   <!-- Header Section -->
+   <header class="container mx-auto rounded-4xl">
+    <!-- nav -->
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </div>
+
+          </div>
+          <a class="btn btn-ghost text-2xl font-bold ">P-Ticket</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="btn rounded-xl border-2 border-solid border-[#1DD100] text-[#1DD100]"><img src="images/bus-icon.png" alt="">Bus</a>
+        </div>
+      </div>
+    <!-- banner -->
+    <div class="banner">
+        <div class="hero min-h-screen" style="background-image: url(images/banner.png);">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-4xl font-extrabold">End-to-End Travel with <br><span class="font-semibold text-[#1DD100] text-4xl">P Paribahan</span></h1>
+                <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined </p>
+                <button class="btn text-black bg-[#1DD100] btn-primary">Buy Tickets</button>
+              </div>
+            </div>
+          </div>
+    </div>
+   </header>
 </body>
 </html>
