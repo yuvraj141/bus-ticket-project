@@ -54,7 +54,7 @@
               <div class="max-w-md">
                 <h1 class="mb-5 text-4xl font-extrabold">End-to-End Travel with <br><span class="font-semibold text-[#1DD100] text-4xl">P Paribahan</span></h1>
                 <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined </p>
-                <button class="btn text-black bg-[#1DD100] btn-primary">Buy Tickets</button>
+                <button id="buy-ticket" onclick="showDetails()" class="btn text-black bg-[#1DD100] btn-primary">Buy Tickets</button>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
    </header>
 
    <!-- Main section -->
-   <main class="container mx-auto">
+   <main id="main" class="container mx-auto hidden">
     <!-- Coupon section -->
     <section class="my-10 ">
         <div class="text-center  space-y-5">
@@ -116,7 +116,7 @@
             </div>
             </div>
             <div>
-                <button class="btn bg-green-200"><img src="images/seat-green.png" alt="">40 Seats left</button>
+                <button class="btn bg-green-200"><img src="images/seat-green.png" alt=""><span id="seat-left">40</span> Seats left</button>
             </div>
         </div>
         <!-- Route -->
@@ -142,11 +142,138 @@
         </div>
          <h2>550 Taka</h2>
          <p>Per seat</p>
-         
-     </div>
+    </div>
+        </div>
+    </section>
 
+    <!-- Seat Selecting section -->
+    <section class="container mx-auto py-10">
+        <!-- parent div -->
+        <div class="flex gap-5">
+            <!-- Selecting seat -->
+            <div class="flex-1">
+                <h2 class="text-2xl py-3 font-semibold border-b-2 border-black border-dotted">Select Your Seat</h2>
+                <!-- available -->
+                <div class="flex justify-between py-3 border-b-2 border-black border-dotted">
+                   <div class="flex justify-between"> <img src="images/seat-gray.png" alt="">Available</div>
+                   <div><img src="images/seat-green-filled.png" alt=""></div>
+                </div>
+                <div><img src="images/" alt=""></div>
+                <!-- seats row-1 -->
+                <div class="gap-4 flex justify-between py-3"><span class="text-2xl">A</span>
+          <button class="btn button">A1</button>
+          <button class="btn button ">A2</button>
+          <button class="btn button">A3</button>
+          <button class="btn button">A4</button>
+          <button class="btn button">A5</button>
+          <button class="btn button">A6</button>
+              </div>
+          <!-- seats row-2 -->
+          <div class="gap-2 py-3 flex justify-between"><span class="text-2xl">B</span>
+          <button class="btn button">B1</button>
+          <button class="btn button ">B2</button>
+          <button class="btn button">B3</button>
+          <button class="btn button">B4</button>
+          <button class="btn button">B5</button>
+          <button class="btn button">B6</button>
+        </div>
+            <!-- seats row-3 -->
+          <div class="gap-2 py-3 flex justify-between"><span class="text-2xl">C</span>
+          <button class="btn button">C1</button>
+            <button class="btn button ">C2</button>
+       <button class="btn button">C3</button>
+          <button class="btn button">C4</button>
+         <button class="btn button">C5</button>
+         <button class="btn button">C6</button>
+              </div>
+            <!-- seats row-4 -->
+          <div class="gap-2 py-3 flex justify-between"><span class="text-2xl">D</span>
+          <button class="btn button">D1</button>
+            <button class="btn button ">D2</button>
+       <button class="btn button">D3</button>
+          <button class="btn button">D4</button>
+         <button class="btn button">D5</button>
+         <button class="btn button">D6</button>
+              </div>
+            </div>
+            <!-- pricing Details -->
+            <div class="flex-1">
+                <h1 class="text-2xl py-3 font-semibold border-b-2 border-black border-dotted ">Selected Seat & Pricing</h1>
+                <!-- show the price -->
+                <div class="bg-slate-300 px-4">
+                  <ul class="flex py-3 border-b-2 border-black border-dotted justify-between">
+                    <li class="font-bold">Seat <span class="text-green" id="seat-count">0</span></li>
+                    <li class="font-bold">Class</li>
+                    <li class="font-bold">Price</li>
+                  </ul>
+                  <!-- adding selected tickets js-->
+              
+                  <ul id="selected-seat-container" class="flex flex-row justify-between py-3  ">
+                   
+                  </ul>
+              
+                  <!-- total price -->
+                  <ul class="flex font-bold justify-between">
+                    <li>Total Price</li>
+                    <li>BDT <span id="total-price">0</span></li>
+                  </ul>
+                  <!-- coupon -->
+                  <input type="text" id="coupon-input" placeholder="Have You Any Coupon?" 
+                class="input   input-bordered input-accent w-full max-w-xs" />
+                  <button onclick="grandTotal()" class="btn  bg-green-500 text-white"
+                 >Apply</button>
+                 <ul class="flex font-boldjustify-between">
+                  <li>Grand Total</li>
+                  <li>BDT<span id="grand-total"></span></li>
+                 </ul>
+                 <!-- user input --> 
+                 <label class="label">
+                  <span class="label-text">Passenger Name</span>
+                </label>
+                 <input type="text" placeholder="Name" class="input input-bordered" required />
+                 <label class="label">
+                  <span class="label-text">Phone Number</span>
+                </label>
+                 <input type="number" placeholder="number" class="input input-bordered" required />
+                 <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                 <input type="email" placeholder="email" class="input input-bordered" required />
+                 <div class="form-control mt-6">
+                  <button class="btn bg-green-500 text-white">Login</button>
+                </div>
+                </div>
+            </div>
         </div>
     </section>
    </main>
+   <!-- footer -->
+   <footer class="footer p-10 bg-black text-white text-base-content">
+    <aside>
+      <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
+      <p>P Ticket.<br>Providing reliable tech since 1992</p>
+    </aside> 
+    <nav>
+      <h6 class="footer-title">Services</h6> 
+      <a class="link link-hover">Branding</a>
+      <a class="link link-hover">Design</a>
+      <a class="link link-hover">Marketing</a>
+      <a class="link link-hover">Advertisement</a>
+    </nav> 
+    <nav>
+      <h6 class="footer-title">Company</h6> 
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Contact</a>
+      <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a>
+    </nav> 
+    <nav>
+      <h6 class="footer-title">Legal</h6> 
+      <a class="link link-hover">Terms of use</a>
+      <a class="link link-hover">Privacy policy</a>
+      <a class="link link-hover">Cookie policy</a>
+    </nav>
+  </footer>
+   <script src="app.js"></script>
 </body>
 </html>
